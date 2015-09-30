@@ -1,0 +1,11 @@
+build/
+.project
+.settings
+.classpath
+.gradle
+bin
+docker/application
+target/
+.idea
+*.iml
+*.log
