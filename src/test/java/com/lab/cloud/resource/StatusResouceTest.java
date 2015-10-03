@@ -44,6 +44,7 @@ public class StatusResouceTest {
     public final void setUp() throws Exception {
         tomcat = new Server();
         tomcat.start();
+        LOG.info("************************** TOMCAT PORT: " + tomcat.getPort());
     }
 
     @After
@@ -61,6 +62,10 @@ public class StatusResouceTest {
 
             String statusResp = res.getResponseBody();
             LOG.debug("************************** STATUS ENDPOINT RESPONSE: " + statusResp);
+            
+            LOG.info("************************** THREAD GOING TO SLEEP");
+            Thread.sleep(40000);
+            LOG.info("************************** THREAD WAKING UP");
 
             Assert.assertNotNull(res.getResponseBody());
             Assert.assertEquals("pong", statusResp);
